@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: priceinfo-backend-canary
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: backend
+      labels:
+        app: priceinfo-svc
+        role: backend
+        env: canary
+    spec:
+      containers:
+      - name: backend
+        image: gcr.io/microservice-poc/priceinfo-svc:1.0.0
+        resources:
+          limits:
+            memory: "1500Mi"
+            cpu: "200m"
+        imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /pricesvc/manage/health
+            port: 8080
+        command: ["sh", "-c", "app -port=8080"]
+        ports:
+        - name: backend
+          containerPort: 8080
