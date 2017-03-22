@@ -8,7 +8,7 @@ spec:
     serviceName: nginx
     servicePort: 80
   rules:
-  - host: microservice.poc.com
+  - host: ms.poc.com
     http:
       paths:
       - path: /pricesvc/manage/health
