@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ms-nginx-ingress
+  name: ms-nginx-ingress1
   namespace: production
 spec:
   backend:
