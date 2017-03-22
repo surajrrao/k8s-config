@@ -13,5 +13,5 @@ spec:
       paths:
       - path: /pricesvc/manage/health
         backend:
-          serviceName: priceinfo-backend-service
-          servicePort: 80
+          serviceName: priceinfo-ingress-service
+          servicePort: 8080
