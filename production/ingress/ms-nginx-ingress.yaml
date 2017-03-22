@@ -20,7 +20,7 @@ spec:
         backend:
           serviceName: inventory-backend-service
           servicePort: 80
-      - path: /productinfosvc/*
+      - path: /productinfosvc/manage/health
         backend:
           serviceName: product-backend-service
           servicePort: 80
