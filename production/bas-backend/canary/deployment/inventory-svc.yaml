@@ -22,7 +22,7 @@ spec:
             path: /inventorysvc/manage/health
             port: 8081
           periodSeconds: 10
-          timeoutSeconds: 5
+          timeoutSeconds: 50
           successThreshold: 2
           failureThreshold: 5
         ports:

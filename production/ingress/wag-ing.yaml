@@ -11,13 +11,13 @@ spec:
       paths:
       - path: /pricesvc
         backend:
-          serviceName: priceinfo-service
-          servicePort: 8080
+          serviceName: inventory-backend-service
+          servicePort: 80
       - path: /productsvc
         backend:
-          serviceName: product-service
-          servicePort: 8080
+          serviceName: product-backend-service
+          servicePort: 80
       - path: /inventorysvc
         backend:
-          serviceName: inventory-service
-          servicePort: 8080
+          serviceName: inventory-backend-service
+          servicePort: 80

@@ -4,7 +4,7 @@ metadata:
   name: priceinfo-backend-canary
   namespace: production
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       name: backend
@@ -22,7 +22,7 @@ spec:
             path: /pricesvc/manage/health
             port: 8080
           periodSeconds: 10
-          timeoutSeconds: 5
+          timeoutSeconds: 50
           successThreshold: 2
           failureThreshold: 5
         ports:

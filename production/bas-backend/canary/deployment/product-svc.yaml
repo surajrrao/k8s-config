@@ -4,7 +4,7 @@ metadata:
   name: product-backend-canary
   namespace: production
 spec:
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       name: backend
@@ -19,10 +19,10 @@ spec:
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
-            path: /productsvc/manage/health
+            path: /productinfosvc/manage/health
             port: 8082
           periodSeconds: 10
-          timeoutSeconds: 5
+          timeoutSeconds: 50
           successThreshold: 2
           failureThreshold: 5
         ports:
