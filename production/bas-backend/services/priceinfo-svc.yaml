@@ -4,6 +4,7 @@ metadata:
   name: priceinfo-backend-service
   namespace: production
 spec:
+  type: LoadBalancer
   ports:
   - name: http
     port: 8080
