@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: lb-ingress
+spec:
+  rules:
+  - host: ms.poc.com
+    http:
+      paths:
+      - path: /pricesvc
+        backend:
+          serviceName: priceinfo-ingress-service
+          servicePort: 80
+  - host: poc.microservice.com
+    http:
+      paths:
+      - path: /pricesvc/manage/health
+        backend:
+          serviceName: priceinfo-ingress-service
+          servicePort: 80
+      - path: /inventorysvc/manage/health
+        backend:
+          serviceName: inventory-ingress-service
+          servicePort: 80
+      - path: /productinfosvc/manage/health
+        backend:
+          serviceName: product-ingress-service
+          servicePort: 80

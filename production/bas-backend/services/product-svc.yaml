@@ -20,13 +20,16 @@ kind: Service
 metadata:
   name: product-ingress-service
   namespace: production
+  labels:
+    app: product-svc
+    role: backend
 spec:
-  type: NodePort  
+  type: NodePort
   ports:
   - name: http
-    port: 8080
+    port: 80
     targetPort: 8082
     protocol: TCP
   selector:
-    role: backend
     app: product-svc
+    role: backend

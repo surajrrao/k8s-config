@@ -20,13 +20,16 @@ kind: Service
 metadata:
   name: inventory-ingress-service
   namespace: production
+  labels:
+    app: inventory-svc
+    role: backend
 spec:
   type: NodePort
   ports:
   - name: http
-    port: 8080
+    port: 80
     targetPort: 8081
     protocol: TCP
   selector:
-    role: backend
     app: inventory-svc
+    role: backend
