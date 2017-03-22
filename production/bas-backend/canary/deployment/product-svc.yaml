@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: product-backend-canary
+  namespace: production
 spec:
   replicas: 3
   template:
@@ -15,10 +16,6 @@ spec:
       containers:
       - name: backend
         image: gcr.io/microservice-poc/product-svc:1.0.0
-        resources:
-          limits:
-            memory: "1500Mi"
-            cpu: "200m"
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
