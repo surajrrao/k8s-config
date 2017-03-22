@@ -21,7 +21,10 @@ spec:
           httpGet:
             path: /inventorysvc/manage/health
             port: 8081
-        command: ["sh", "-c", "app -port=8081"]
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 2
+          failureThreshold: 5
         ports:
         - name: backend
           containerPort: 8081

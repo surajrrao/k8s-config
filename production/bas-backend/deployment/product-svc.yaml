@@ -21,7 +21,10 @@ spec:
           httpGet:
             path: /productsvc/manage/health
             port: 8082
-        command: ["sh", "-c", "app -port=8082"]
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 2
+          failureThreshold: 5
         ports:
         - name: backend
           containerPort: 8082

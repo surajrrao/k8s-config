@@ -21,7 +21,10 @@ spec:
           httpGet:
             path: /pricesvc/manage/health
             port: 8080
-        command: ["sh", "-c", "app -port=8080"]
+          periodSeconds: 10
+          timeoutSeconds: 5
+          successThreshold: 2
+          failureThreshold: 5
         ports:
         - name: backend
           containerPort: 8080
