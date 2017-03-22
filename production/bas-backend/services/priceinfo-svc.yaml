@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: priceinfo-backend-service1
+  name: priceinfo-backend-service
   namespace: production
 spec:
   ports:
   - name: http
-    port: 80
-    targetPort: 80
+    port: 8080
+    targetPort: 8080
     protocol: TCP
   selector:
-    app: gceme
-    role: frontend
+    app: priceinfo-svc
+    role: backend

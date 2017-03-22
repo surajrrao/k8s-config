@@ -17,6 +17,14 @@ spec:
       - name: backend
         image: gcr.io/microservice-poc/priceinfo-svc:1.0.0
         imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+            path: /pricesvc/manage/health
+            port: 8080
+          periodSeconds: 10
+          timeoutSeconds: 50
+          successThreshold: 2
+          failureThreshold: 5
         ports:
         - name: backend
           containerPort: 8080
