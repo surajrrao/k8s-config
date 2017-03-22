@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ms-nginx-ingress
+spec:
+  tls:
+  - hosts:
+    - microservice.poc.com
+    secretName: ms-nginx-ingress-secret
+  rules:
+  - host: microservice.poc.com
+    http:
+      paths:
+      - path: /pricesvc
+        backend:
+          serviceName: priceinfo-backend-service
+          servicePort: 80
+      - path: /inventorysvc
+        backend:
+          serviceName: inventory-backend-service
+          servicePort: 80
+      - path: /productinfosvc
+        backend:
+          serviceName: product-backend-service
+          servicePort: 80
