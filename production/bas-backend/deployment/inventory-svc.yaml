@@ -25,7 +25,6 @@ spec:
           timeoutSeconds: 50
           successThreshold: 2
           failureThreshold: 5
-        command: ["sh", "-c", "app -port=8081"]  
         ports:
         - name: backend
           containerPort: 8081

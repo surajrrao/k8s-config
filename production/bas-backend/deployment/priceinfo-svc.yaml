@@ -17,7 +17,6 @@ spec:
       - name: backend
         image: gcr.io/microservice-poc/priceinfo-svc:1.0.0
         imagePullPolicy: Always
-        command: ["sh", "-c", "app -port=8080"]
         ports:
         - name: backend
           containerPort: 8080
