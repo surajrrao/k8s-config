@@ -15,7 +15,3 @@ spec:
         backend:
           serviceName: inventory-ingress-service
           servicePort: 80
-      - path: /productinfosvc/
-        backend:
-          serviceName: product-ingress-service
-          servicePort: 80
