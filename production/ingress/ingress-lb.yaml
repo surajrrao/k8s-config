@@ -18,19 +18,7 @@ spec:
         backend:
           serviceName: priceinfo-ingress-service
           servicePort: 80
-      - path: /inventorysvc/manage/health
-        backend:
-          serviceName: inventory-ingress-service
-          servicePort: 80
-      - path: /productinfosvc/manage/health
-        backend:
-          serviceName: product-ingress-service
-          servicePort: 80
       - path: /bar
         backend:
           serviceName: echoheadersy
-          servicePort: 80
-      - path: /foo
-        backend:
-          serviceName: echoheadersx
-          servicePort: 80          
+          servicePort: 80       
