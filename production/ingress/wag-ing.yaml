@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ms-ingress
+  namespace: production
 spec:
   tls:
   - secretName: ms-poc-prod-tls
@@ -9,15 +10,15 @@ spec:
   - host: microservice-poc.com
     http:
       paths:
-      - path: /pricesvc
+      - path: /pricesvc/manage/health
         backend:
           serviceName: inventory-backend-service
           servicePort: 80
-      - path: /productsvc
+      - path: /productinfosvc/manage/health
         backend:
           serviceName: product-backend-service
           servicePort: 80
-      - path: /inventorysvc
+      - path: /inventorysvc/manage/health
         backend:
           serviceName: inventory-backend-service
           servicePort: 80
