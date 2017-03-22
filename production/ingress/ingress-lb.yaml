@@ -26,3 +26,11 @@ spec:
         backend:
           serviceName: product-ingress-service
           servicePort: 80
+      - path: /bar
+        backend:
+          serviceName: echoheadersy
+          servicePort: 80
+      - path: /foo
+        backend:
+          serviceName: echoheadersx
+          servicePort: 80          
