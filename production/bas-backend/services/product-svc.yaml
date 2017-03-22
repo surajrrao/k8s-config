@@ -12,3 +12,21 @@ spec:
   selector:
     role: backend
     app: product-svc
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-ingress-service
+  namespace: production
+spec:
+  type: NodePort  
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8082
+    protocol: TCP
+  selector:
+    role: backend
+    app: product-svc

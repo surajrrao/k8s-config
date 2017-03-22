@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ms-lb
+  namespace: production
+spec:
+  rules:
+  - host: microservice-poc.com
+    http:
+      paths:
+      - path: /pricesvc
+        backend:
+          serviceName: priceinfo-ingress-service
+          servicePort: 8080
+      - path: /productinfosvc/manage/health
+        backend:
+          serviceName: product-ingress-service
+          servicePort: 8080
+      - path: /inventorysvc/*
+        backend:
+          serviceName: inventory-ingress-service
+          servicePort: 8080

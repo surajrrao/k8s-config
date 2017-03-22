@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ms-test1
+  name: ms-ingtest
   namespace: production
 spec:
   backend:
-    serviceName: priceinfo-backend-service1
+    serviceName: priceinfo-ingress-service
     servicePort: 8080
