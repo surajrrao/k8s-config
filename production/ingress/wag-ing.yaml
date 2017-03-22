@@ -5,7 +5,7 @@ metadata:
   namespace: production
 spec:
   tls:
-  - secretName: ms-poc-prod-tls
+  - secretName: mstls
   rules:
   - host: microservice-poc.com
     http:
