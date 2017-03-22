@@ -19,12 +19,12 @@ spec:
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
-            path: /productsvc/manage/health
+            path: /productinfosvc/manage/health
             port: 8082
           periodSeconds: 10
           timeoutSeconds: 50
           successThreshold: 2
-          failureThreshold: 5 
+          failureThreshold: 5
         ports:
         - name: backend
           containerPort: 8082
