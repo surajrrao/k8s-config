@@ -1,10 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: lb-ingress1
+  name: lb-ingress
 spec:
   rules:
-  - host: poc1.microservice.com
+  - host: poc.microservice.com
     http:
       paths:
       - path: /pricesvc/*
@@ -14,4 +14,8 @@ spec:
       - path: /inventorysvc/*
         backend:
           serviceName: inventory-ingress-service
+          servicePort: 80
+      - path: /productinfosvc/*
+        backend:
+          serviceName: product-ingress-service
           servicePort: 80
