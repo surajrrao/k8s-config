@@ -4,19 +4,6 @@ metadata:
   name: ms-ingress
   namespace: production
 spec:
-  rules:
-  - host: microservice-poc.com
-    http:
-      paths:
-      - path: /pricesvc/manage/health
-        backend:
-          serviceName: priceinfo-backend-service
-          servicePort: 80
-      - path: /productinfosvc/manage/health
-        backend:
-          serviceName: product-backend-service
-          servicePort: 80
-      - path: /inventorysvc/manage/health
-        backend:
-          serviceName: inventory-backend-service
-          servicePort: 80
+  backend:
+    serviceName: priceinfo-backend-service
+    servicePort: 80
