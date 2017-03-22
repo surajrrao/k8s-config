@@ -13,12 +13,12 @@ spec:
       paths:
       - path: /pricesvc/manage/health
         backend:
-          serviceName: priceinfo-backend-service
-          servicePort: 80
-      - path: /inventorysvc
+          serviceName: priceinfo-ingress-service
+          servicePort: 8080
+      - path: /inventorysvc/manage/health
         backend:
-          serviceName: inventory-backend-service
-          servicePort: 80
+          serviceName: inventory-ingress-service
+          servicePort: 8080
       - path: /productinfosvc/manage/health
         backend:
           serviceName: product-ingress-service
