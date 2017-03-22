@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: jenkins-test
-  namespace: jenkins
+  name: ms-test1
+  namespace: production
 spec:
   backend:
-    serviceName: jenkins-ui
+    serviceName: priceinfo-backend-service1
     servicePort: 8080
