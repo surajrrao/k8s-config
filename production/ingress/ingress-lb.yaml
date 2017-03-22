@@ -4,14 +4,14 @@ metadata:
   name: lb-ingress1
 spec:
   rules:
-  - host: ms.poc.com
+  - host: ms1.poc.com
     http:
       paths:
       - path: /pricesvc
         backend:
           serviceName: priceinfo-ingress-service
           servicePort: 80
-  - host: poc.microservice.com
+  - host: poc1.microservice.com
     http:
       paths:
       - path: /pricesvc*
