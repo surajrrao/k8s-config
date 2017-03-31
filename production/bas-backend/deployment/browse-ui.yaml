@@ -15,11 +15,11 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: us.gcr.io/microservice-poc/appengine/default.20170331t043020:1.0.0
+        image: gcr.io/microservice-poc/browser-ui:1.0.0
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
-            path: /
+            path: /?id=prod1001110
             port: 8080
           periodSeconds: 10
           timeoutSeconds: 50
