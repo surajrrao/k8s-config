@@ -20,11 +20,11 @@ spec:
         readinessProbe:
           httpGet:
             path: /
-            port: 3000
+            port: 8080
           periodSeconds: 10
           timeoutSeconds: 50
           successThreshold: 2
           failureThreshold: 5
         ports:
         - name: frontend
-          containerPort: 3000
+          containerPort: 8080
