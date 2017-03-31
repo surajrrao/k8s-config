@@ -19,7 +19,7 @@ spec:
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
-            path: /?id=prod1001110
+            path: /js/script.js
             port: 8080
           periodSeconds: 10
           timeoutSeconds: 50
