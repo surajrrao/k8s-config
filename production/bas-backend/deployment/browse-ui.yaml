@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gcr.io/microservice-poc/browse-ui:1.0.0
+        image: us.gcr.io/microservice-poc/appengine/default.20170331t043020:1.0.0
         imagePullPolicy: Always
         readinessProbe:
           httpGet:
