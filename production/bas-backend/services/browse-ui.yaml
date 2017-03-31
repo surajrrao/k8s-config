@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: browse-ui-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: browse-ui
+    role: frontend
