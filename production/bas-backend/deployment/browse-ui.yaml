@@ -17,14 +17,6 @@ spec:
       - name: frontend
         image: gcr.io/microservice-poc/browser-ui:1.0.0
         imagePullPolicy: Always
-        readinessProbe:
-          httpGet:
-            path: /js/script.js
-            port: 8080
-          periodSeconds: 10
-          timeoutSeconds: 50
-          successThreshold: 2
-          failureThreshold: 5
         ports:
         - name: frontend
           containerPort: 8080
